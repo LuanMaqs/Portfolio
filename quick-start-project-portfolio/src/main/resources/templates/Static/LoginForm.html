@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./Src/Style/Main.css">
+    <title>Login</title>
+</head>
+<body id="conteudo">
+    <div class="screen">
+        <div>
+            <img src="./Src/Img/image.png" alt="" height="960px" width="1926px">
+        </div>
+        <form id="form-Login">
+            <div id="bodyCadastro">
+                <h3>Login</h3><br>
+                <label for="usuario">Usuário</label>
+                <input type="text" id="usuario" name="usuario" required placeholder="Usuário ou Email"><br>
+
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required><br>
+
+                <a href="LINK PARA API RESET DE SENHA">Esqueci minha senha</a>
+
+                <button type="submit">Entrar</button><br>
+
+                <div class="footerLogin">
+                    <span>Entre como recrutador</span>
+                    <a href="#">Clique aqui</a> <br>
+                    <span>Não possui uma conta?</span>
+                    <a href="./Casdastro.html">Crie uma</a>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="./Src/Js/main.js"></script>
+<script registro>
+
+      const trocarConteudo = document.querySelectorAll('a')
+  
+      trocarConteudo.forEach(link => {
+          
+  
+          link.addEventListener('click', (e) => {
+  
+              e.preventDefault()
+  
+              const conteudo = document.getElementById('conteudo')
+  
+              console.log(link)
+              
+              fetch(link.href)
+                  .then(resp => resp.text())
+                  .then(html => conteudo.innerHTML = html)
+                  .catch(e)
+  
+          })
+      })
+  
+  </script>
+</html>
